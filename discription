@@ -1,0 +1,264 @@
+Project idea in details:
+Othello is a game played between two people on a checkerboard with black and white pieces.  Our project will be to have computer play Othello against a human using an AI program we implement.  computer will determine the state of the board using visual sensors, decide whose turn it is, and use his actuators to take his own turn.
+	
+The project will attempt to go beyond the basic task of playing well. Collecting some results and bringing about some conclusions regarding Othello and game-playing programs is set as an objective. Some of the data and lessons learned will be recorded and the results summarised and made available on-line.
+
+It is by no means the case that this is a first attempt or a genuine implementation of a game-playing engine. In fact, game theory and its principles are heavily used not only in the domain of board games, but also in a great number of predictive systems that are a common research and development area.
+
+By present day, not only were all requirements and aims realised, but some extensions were put in place too. Such extension can be sub-categorised into these which sit on top of existing element and these which are rather independent and offer extra functionality to Othello Master as a demonstration and analysis tool.
+
+The game Othello is considered to be a game that requires comprehensive experience to be mastered. It is also said that Othello ``takes a minute to learn and a lifetime to master''. What makes it particularly interesting is the difficulty in telling which player is in a point of advantage until the late stages of the game. This is, in principle, where lack of skill and experience take their toll.
+
+The following is a brief summary of the rules:
+
+At the beginning of the game, four stones9 are already placed at the centre of an 8x8 standard game board. Two stones of each one of the players are placed diagonally and, by convention, the player to make the first move is of white colour, whereas the other is of black colour. The stones are all two-sided and flipping them changes their colour to the opponent's colour. A legal move is such that it reverses one or more stones of the opponent's colour. To reverse a stone, a player places one of his/her stones in such a way so that it surrounds a sequence of one or more of the opponent's stones. Such a sequence of opponent's stones must be ending in a board slot that is occupied by the reversing player's stone. All straight lines are applicable in such a reversal: horizontal, vertical or diagonal. If no reversal is possible, the turn is passed to the opponent. The game is finished when neither player has any legal moves left. Usually, by this point the board is completely full. Whoever has the most stones placed on the board at that point wins the game.
+
+
+Overview:
+Capture or conquer the grid with your black or white discs. Prepare yourself, user.
+Game type: Competitive, Strategy, Grid.
+Number of players: 2 players .
+Game Pieces: game grid, 64 black and white discs.
+Project  main functionalities:
+
+In general, we intend to have a  computer play the board game Othello.  We believe that this is an attainable project, because the goals are flexible and extensible.  We chose to take on this project because it involves Human interaction, in a format that we have not yet seen.  Instead of assisting a human with some task, we are interested in getting computer to play a game, precisely because it will be entertaining to develop and watch.
+
+Specifically, we intend to have computer intelligently play a game of Othello, where he makes his own moves completely, and makes his moves based upon a human opponent’s most recent actions.
+
+In order to play a game of Othello, computer must use several concepts that are taught in this class.  computer will use one or more cameras to assess the state of the board (possibly with the assistance of AR tags).  Additionally, through some additional process, computer will assess if the human player has made a move.
+
+Once computer has determined that the human has made a move, computer will run an AI to calculate the best next move to take.  This AI is out of the scope of this class, and we may build on the work of other classes for it (or drop in pre-written code for it).
+
+Once computer has determined which move to make, he will move pieces on the board to effect that move.  Due to the rules of Othello, he may have to flip pieces.  Planning will be required to determine how to most efficiently move the pieces around the board to effect his desired move quickly. Pente is a version of Othello that does not involve flipping, but instead involves moving pieces off the board. It may be more desirable to play Pente instead as it will save game time because Baxter no longer has to flip pieces. 
+
+Due to the light weight of the Othello pieces, we will most likely not have to use dynamics models to compute Baxter’s movements.  Additionally, since Othello pieces are rotationally symmetric, their kinematic movements should be comparatively simple.  
+
+
+
+Use case diagram :
+
+
+ 
+
+
+
+ 
+3- similar application in the market
+
+•	Scrabble
+•	Drawful 2
+•	Reversi
+•	Scrabble
+•	Cosmic Consensus
+•	Quiplash
+•	Jeopardy!
+4- heuristic algorithms
+1-	Game playing, as one of the most challenging fields of artificial intelligence has received a lot of attention. Games like Othello, which have proven to fit in well with computer game playing strategies, have spawned a lot of research in this direction. Though numerous computer Othello players have been designed, and have beaten human world champions, it is not very clear as to how the various Othello heuristics interact. This paper implements and examines various heuristics, in an attempt to make observations about the interplay between the heuristics, and how well each heuristic contributes as a whole. Identifying heuristics that contribute immensely to Othello game-play implies that more processor cycles could be allocated in that direction to enhance the quality of play. Due to the complexity of accurate calculations, most heuristics tend to approximate. Like a typical stability heuristic, that approximates stability, instead of accurately calculating it. By realizing the importance of the stability heuristic, it enables one to decide the amount of time to spend in such a function. Various experimental data is collected and analyzed in the evaluation section, where an insight is provided as to what the optimal way of using heuristics would be. Though this paper concentrates on Othello and heuristics pertaining to it, such analysis is applicable for other similar games
+Department of Computer Science and Engineering, Paul G. Allen Center, University of Washington, Seattle, WA-98195 {vaishu, muthu}@cs.washington.edu
+https://courses.cs.washington.edu/courses/cse573/04au/Project/mini1/RUSSIA/Final_Paper.pdf
+2-	In the context of decision systems for board games; usually, nodes in a game tree are explored using a search algorithm. When the algorithm visits a node, it must evaluate that node through a function called heuristic. In order to design the evaluation function, the domain must be taken into account.
+In this paper, we discuss the factors that influence the design of a heuristic for a desire board game. Thus, we present an approach to find the best movement by deploying a game tree, with an implementation for the board game called Othello. The state of the board is used to obtain the desired factors and the best movement is obtained through an in-depth search, according to the designed heuristic. We experimented with two algorithms. The former is Mini-Max and its evolution to Alpha-Beta. The latter is Scout, which presents better performance regarding time. In addition, we present the results, rules, and implementation features.
+Author:
+Jorge Hernandez, Karen Daza, and Hector Florez 
+ Universidad Distrital Francisco Jose de Caldas Bogot´a, Colombia jehernandezrodriguez@gmail.com, kgiselledaza@gmail.com, haflorezf@udistrital.edu.co
+http://ceur-ws.org/Vol-2486/icaiw_wdea_3.pdf
+3-	Monte Carlo Tree Search (MCTS) with an appropriate tree policy may be used to approximate a minimax tree for games such as Go, where a state value function cannot be formulated easily: recent MCTS algorithms successfully combine Upper Confidence Bounds for Trees with Monte Carlo (MC) simulations to incrementally refine estimates on the game-theoretic values of the game's states. Although a game-specific value function is not required for this approach, significant improvements in performance may be achieved by derandomising the MC simulations using domain-specific knowledge. However, recent results suggest that the choice of a non-uniformly random default policy is non-trivial and may often lead to unexpected outcomes. In this paper we employ Temporal Difference Learning (TDL) as a general approach to the integration of domain-specific knowledge in MCTS and subsequently study its impact on the algorithm's performance. In particular, TDL is used to learn a linear function approximator that is used as an a priori bias to the move selection in the algorithm's default policy; the function approximator is also used to bias the values of the nodes in the tree directly. The goal of this work is to determine whether such a simplistic approach can be used to improve the performance of MCTS for the well-known board game Othello. The analysis of the results highlights the broader conclusions that may be drawn with respect to non-random default policies in general.
+https://ieeexplore.ieee.org/abstract/document/6032021
+4-	This article surveys three techniques for enhancing heuristic game-tree search pioneered in the author's Othello program LOGISTELLO, which dominated the computer Othello scene for several years and won against the human World-champion 6–0 in 1997. First, a generalized linear evaluation model (GLEM) is described that combines conjunctions of Boolean features linearly. This approach allows an automatic, data driven exploration of the feature space. Combined with efficient least squares weight fitting, GLEM greatly eases the programmer's task of finding significant features and assigning weights to them. Second, the selective
+search heuristic PROBCUT and its enhancements are discussed. Based on evaluation correlations PROBCUT can prune probably irrelevant sub-trees with a prescribed confidence. Tournament results indicate a considerable playing strength improvement compared to full-width α-β search. Third, an opening book framework is presented that enables programs to improve upon previous play and to explore new opening lines by constructing and searching a game-tree based on evaluations of played variations. These general methods represent the state-of-the-art in computer Othello programming and begin to attract researchers in related fields.
+https://www.sciencedirect.com/science/article/pii/S0004370201000935
+
+5-	This paper compares three strategies in using reinforcement learning algorithms to let an artificial agent learn to play the game of Othello. The three strategies that are compared are: Learning by self-play, learning from playing against a fixed opponent, and learning from playing against a fixed opponent while learning from the opponent's moves as well. These issues are considered for the algorithms Q-learning, Sarsa and TD-learning. These three reinforcement learning algorithms are combined with multi-layer perceptrons and trained and tested against three fixed opponents. It is found that the best strategy of learning differs per algorithm. Q-learning and Sarsa perform best when trained against the fixed opponent they are also tested against, whereas TD-learning performs best when trained through self-play. Surprisingly, Q-learning and Sarsa outperform TD-learning against the stronger fixed opponents, when all methods use their best strategy. Learning from the opponent's moves as well leads to worse results compared to learning only from the learning agent's own moves
+https://ieeexplore.ieee.org/abstract/document/6614996
+
+“All Details of Alpha-Beta Depth-First algorithm used and the results of the experiments”
+
+Introduction about the algorithm :
+•	Alpha–beta pruning is a search algorithm that seeks to decrease the number of nodes that are evaluated by the minimax algorithm in its search tree.
+•	It is an adversarial search algorithm used commonly for machine playing of two-player games (Othello Player).
+•	It stops evaluating a move when at least one possibility has been found that proves the move to be worse than a previously examined move. 
+•	Such moves need not be evaluated further, When applied to a standard minimax tree, it returns the same move as minimax would, but prunes away branches that cannot possibly influence the final decision.
+•	Alpha-beta pruning is a modified version of the minimax algorithm. It is an optimization technique for the minimax algorithm.
+•	we have seen in the minimax search algorithm that the number of game states it has to examine are exponential in depth of the tree.
+•	we cannot eliminate the exponent, but we can cut it to half. Hence there is a technique by which without checking each node of the game tree ,we can compute the correct minimax decision, and this technique is called pruning.
+
+•	This involves two threshold parameter Alpha and beta for future expansion, so it is called alpha-beta pruning, It is also called as Alpha-Beta Algorithm.
+•	Alpha-beta pruning can be applied at any depth of a tree, and sometimes it not only prune the tree leaves but also entire sub-tree.
+
+•	The Alpha-beta pruning to a standard minimax algorithm returns the same move as the standard algorithm does, but it removes all the nodes which are not really affecting the final decision but making algorithm slow. Hence by pruning these nodes, it makes the algorithm fast.
+The two-parameter can be defined as:
+o	Alpha: The best (highest-value) choice we have found so far at any point along the path of Maximizer. 
+o	Beta: The best (lowest-value) choice we have found so far at any point along the path of Minimizer.
+
+Key points about alpha-beta pruning:
+o	The Max player will only update the value of alpha.
+o	The Min player will only update the value of beta.
+o	While backtracking the tree, the node values will be passed to upper nodes instead of values of alpha and beta.
+o	We will only pass the alpha, beta values to the child nodes.
+
+Rules to find good ordering (by Alpha-Beta Algorithm) :
+Following are some rules to find good ordering in alpha-beta pruning:
+o	Occur the best move from the shallowest node.
+o	Order the nodes in the tree such that the best nodes are checked first.
+o	Use domain knowledge while finding the best move. Ex: for Chess, try order: captures first, then threats, then forward moves, backward moves.
+o	We can bookkeep the states, as there is a possibility that states may repeat.
+
+Working of Alpha-Beta Pruning (example) :
+ 
+Step 1: At the first step the, Max player will start first move from node A where α= -∞ and β= +∞, these value of alpha and beta passed down to node B where again α= -∞ and β= +∞, and Node B passes the same value to its child D.
+
+Step 2: At Node D, the value of α will be calculated as its turn for Max. The value of α is compared with firstly 2 and then 3, and the max (2, 3) = 3 will be the value of α at node D and node value will also 3.
+
+Step 3: Now algorithm backtrack to node B, where the value of β will change as this is a turn of Min, Now β= +∞, will compare with the available subsequent nodes value, i.e. min (∞, 3) = 3, hence at node B now α= -∞, and β= 3.
+ 
+Step 4: At node E, Max will take its turn, and the value of alpha will change. The current value of alpha will be compared with 5, so max (-∞, 5) = 5, hence at node E α= 5 and β= 3, where α>=β, so the right successor of E will be pruned, and algorithm will not traverse it, and the value at node E will be 5.
+ 
+
+Step 5: At next step, algorithm again backtrack the tree, from node B to node A. At node A, the value of alpha will be changed the maximum available value is 3 as max (-∞, 3)= 3, and β= +∞, these two values now passes to right successor of A which is Node C.
+At node C, α=3 and β= +∞, and the same values will be passed on to node F.
+Step 6: At node F, again the value of α will be compared with left child which is 0, and max(3,0)= 3, and then compared with right child which is 1, and max(3,1)= 3 still α remains 3, but the node value of F will become 1.
+ 
+Step 7: Node F returns the node value 1 to node C, at C α= 3 and β= +∞, here the value of beta will be changed, it will compare with 1 so min (∞, 1) = 1. Now at C, α=3 and β= 1, and again it satisfies the condition α>=β, so the next child of C which is G will be pruned, and the algorithm will not compute the entire sub-tree G.
+ 
+Step 8: C now returns the value of 1 to A here the best value for A is max (3, 1) = 3. Following is the final game tree which is the showing the nodes which are computed and nodes which has never computed. Hence the optimal value for the maximizer is 3 for this example.
+ 	
+
+
+
+Rules of Othello player game :
+	The game is a two-player zero-sum, perfect information strategy board game where the       players (black or white) have the goal of  having the most of their discs on the board at the end of the game.
+	The board is an 8×8 grid and players alternate placing a disc on an empty cell that’s adjacent to an opponent’s disc.
+	The columns are denoted with the letters a-g and the rows with the numbers 1-8.
+
+
+
+Mechanism of AI agent in Othello game  :
+
+	The AI accepts a representation of the current game state of the game being played then It uses this to search for the next move to take which leads to a winning conclusion.
+
+	If there are too many states to consider to exhaustively consider every game trajectory, it may use a board evaluator or value function to approximate the likelihood of winning in the position.
+
+
+	The search outputs a numeric evaluation of every possible action that can be taken.
+
+	A decision is taken to act according to the result after the search, usually along the lines of choosing the move that maximizes the probability of winning, with an exception of exploring different lines of play to learn from them.
+
+
+
+Example to play the game:
+a.	The game begins with white discs on d4 and e5 and black discs on d5 and e4 (initial board).
+
+	Black is the first to move and can place discs at d3, d4, f4 or f6 as indicated by the crosses. 
+
+b.	Black places a disc at e6 and changes the white disc e5 to black as it is now being flanked by black      disc.
+
+	The possible counter-moves by white are indicated with the crosses again.
+
+c.	White takes over the black disc on d5 by placing a disc on d6.
+d. Black takes over the discs on d5 and d6 by placing a disc on c6.
+ 
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+Flow chart for Othello game :                                                                                   
+ 
+
+
+Block diagrm:
+ 
+Pregame Setup
+
+Each player chooses either black or white. Each player places two black and two white pieces in an alternating pattern in the middle of the board in the form of a square. Example: W, B on one row, and then B,W on another row.
+
+Playing the Game
+
+Black plays first and draws a single disc and places it on a valid spot on the grid. You must place a disc on a spot that allows you to “flank” or “capture” at least one of your opponent’s discs by bordering them in a row.
+
+You must flip all captured discs to your color.
+
+To capture your opponent’s discs you must have 1 of your own pieces at the end of a row and then on your turn place a new piece at the beginning of the row. Everything in between on that row is now flipped to your color. You can only capture rows of a single color 
+
+
+adjacent to each other; there cannot be any open space or your own discs between them or the combo is interrupted.
+You can flank any number of discs. You may capture discs vertically, horizontally, diagonally. You may capture in multiple directions at the same time. All discs that can be flipped must be flipped. You cannot pick and choose which ones are captured.
+If you cannot make a valid move then your turn is forfeit and your opponent may go again. If you have a valid move available to you then you must make that move and are not allowed to forfeit your turn.
+If you have run out of discs, but can still make valid moves, then your opponent must give you one of their own discs to play with. This exchange can continue for as long as needed.
+When neither player can make any further play then the game is over.
+
+Winning the Game
+Each player counts the number of spaces occupied by their color. Highest count is the winner. Games can end before all spaces are filled.
+
+Experimental Setup:
+We implemented the Othello game along with the various heuristics and search strategies in the Visual Studio .NET python framework. The entire code base consisted of around 4000 lines of code. The search strategies implemented were the ones discussed in Section 4, while the heuristics implemented were the ones explained in Section 5. We ran all tests on a system with 2 GB of RAM, and 4 Intel Xeon processors, each clocked at 2.8 GHz. This section illustrates the relative importance of the various heuristics. A series of experiments were conducted with our Othello game, in which we enabled different heuristics of varying weights and activated computer versus computer auto play. Though we implemented the three different search strategies mentioned in Section 5, we use the alpha-beta search strategy with a depth of 5, unless otherwise mentioned.
+ 
+B. Testing :
+the Algorithms To gain a good understanding of the performances of both the learning and the fixed players, we let them play multiple games, both players playing black and white. All players except RAND have a deterministic strategy during testing. To prevent having one player win all training games, we initialize the board as one of 236 possible starting positions after four turns1 . During both training and testing, we cycle through all the possible positions, ensuring that all positions are used the same number of times. Each position is used twice: the agent plays both as white and black. Table I shows the average performance per game of the fixed strategies when tested against each other in this way. We are interested in whether the relative performances might be reflected in the learning player’s performance when training against the three fixed players.
+
+Platform development:-
+Platform development refers to the development of the fundamental software that makes hardware work and that provides a platform for application development.
+
+ As discussed before, this includes the development of firmware, boot loaders, and BIOS, as well as operating system kernels and BSPs.
+ In addition to such hardware-interface code, it also usually involves integrating various forms of middleware software on top of the operating system. 
+In larger organizations, there is usually a dedicated platform team who is responsible for developing and delivering ready-to-use integrated platforms for application developers. 
+Virtual platforms can be used to efficiently deliver the platform to application developers, containing both hardware and software, booted, configured, and ready to go. With a virtual platform, a nightly build can become a nightly boot, using checkpoints as discussed in Chapter 3 to deliver a ready-to-use platform to the application development teams.
+The software development platform for the interactive 3D measurement tool is the Tcl/Tk language in combination with the programming languages C and C + +. Tcl/Tk is a script language that provides the capabilities of standard C/C + + coding and supports socket programming, input/output handling, looping, and mathematical manipulation. 
+Tk is a popular extension of Tcl designed for graphical user interface (GUI) construction with convenient features for interface layout and associated event handling. 
+Both Tcl and Tk have interfaces that enable developers to implement custom C/C+ + code for arbitrary extensions. For 3D computer graphics representation, a graphics programming environment such as VTK can be used along with a graphics library such as OpenGL (Sun Microsystems). There are various different types of computing platform, both software and hardware based. 
+The term platform refers to any software framework or hardware architecture from which a software application can be launched.
+ Computing platforms can include graphical user interfaces (GUI) and operating systems (OS) such as Windows or Macintosh OS and OSX, programming languages, or the actual computer hardware architecture itself. 
+software development, the platform can be utilized as a means of ensuring the constant performance of a product when the platform is running.
+ This can result in a software application that can be executed independently of the operating system installed on the hardware. Examples of these types of software applications include Java and QuickTime-based packages.
+ Some Internet-based software companies utilize these platforms to allow online gaming to take place without the restriction of installed operating system affecting the operation of the software.
+ By using a computing platform to emulate an older operating system, these services allow games to be played on modern hardware that would normally be incompatible with the software.in this project we make a software development platform ,we need to make a development in GUI. 
+In our project we use thinter import 
+The tkinter package (“Tk interface”) is the standard Python interface to the Tcl/Tk GUI toolkit. Both Tk and tkinter are available on most Unix platforms, including macOS, as well as on Windows systems. This framework provides Python users with a simple way to create GUI elements using the widgets found in the Tk toolkit. 
+Tk widgets can be used to construct buttons, menus, data fields, etc.
+ in a Python application and we independent of this to bulit our gui in this project .in the game we need to knew the order of numbers after any step so, The range() function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and stops before a specified number, and we use a random choice () function to select a random item from set [ game options] . In Python, we use = operator to create a copy of an object. You may think that this creates a new object; it doesn't. It only creates a new variable that shares the reference of the original object. In python ,there are two ways to create copy 1- shallow 2- Deep copy . In this project we use Deep copy A deep copy creates a new object and recursively adds the copies of nested objects present in the original elements…..
+About programming language we depende on jave language becouse programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let programmers write once, run anywhere meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. 
+Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. 
+It is a general-purpose programming language intended to let programmers write once, run anywhere (WORA),meaning that compiled Java code can run on all platforms that support Java without the need for .
+
+Analysis of the results and the insights.. after this project we can understand this game and knew the futuers in this ..we can knew waies that win by ..without randomly steps . We can determine the points all from both sides so that we can complete the game .
+As for the insights, this game combines intelligence and quick intuition so that the party can make the decision that will help him achieve the largest number of points (the right way).
+
+
+- Why did the algorithm behave in such a way .
+The algorithm behave in this way becouse its behave like human .It enables the computer to imitate humanity and think like a human thinks in the same way. It  can think and act in the ways available to him in the game like a human being .. this game is not designed for humans only, but it is possible for a person to start the game and the other party is the computer. This algorithm makes the game based on competition, so that victory is governed by the number of points that both parties can achieve. To summer all of this  ..the algorithm think and behave like human so, it behave in this way.
+
+
+
+
+Advantages of this game:-
+In  Othello, each character has a tragic flaw, which Iago takes advantage of and uses to cause the character’s downfall and or death, and Othello is able to be successful because he exudes a sense of confidence and control that others find appealing. It is a bit on the sad side to understand that he lacks this when it comes to his love of Desdemona. His primary weakness is that his insecurity and jealous nature gets the best of him
+
+
+About disadvantage:-
+One of Othello's weakness' is his passions which he makes all his decisions with instead of thinking through everything logically and there are some onther disadvantage such :-
+1-Minimize options - hard to play tactics
+ 2- Attacking Multiple Lines at a time - you will get at least one.
+3- Creating multiple weakness on a line - quite difficult defend two points on a line at the same time
+Corners are crucial.
+4- Edges are important.
+
+
+Modifications may be try when solving this problem:-
+1 –We make the algorithm behave more freely in the sense of not restricting the game in certain ways and making it an open arena so that each of the two parties can think about the way in which he will collect the largest number of points, but in a faster time.
+-2 The game is not determined to win is not only the number of points most of the points .. and inasty .. so that a certain number of points must be placed by the other before the other time and thus have been able to win.
